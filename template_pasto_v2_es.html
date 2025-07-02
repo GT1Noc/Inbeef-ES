@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <style>
+        /* Estilos básicos para o relatório PDF */
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1 { text-align: center; color: #2E7D32; }
+        h2 { margin-top: 20px; color: #2E7D32; text-decoration: underline; }
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: center; }
+        th { background-color: #f2f2f2; }
+        .gain-box {
+            margin-top: 20px;
+            padding: 10px;
+            border: 2px solid #388E3C;
+            text-align: center;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Simulación Comparativa Inbra – Pasto</h1>
+
+    <h2>Entradas de la Simulación</h2>
+    <table>
+        <tr>
+            <th>Período (dias)</th>
+            <td>{{ dias }}</td>
+        </tr>
+        <tr>
+            <th>Valor do kg do peso vivo (recria) (R$)</th>
+            <td>US$ {{ '%.2f' % valor_kg_recria }}</td>
+        </tr>
+        <tr>
+            <th>Número total de animais</th>
+            <td>{{ num_animais }}</td>
+        </tr>
+        <tr>
+            <th>Consumo do produto padrão (g/dia)</th>
+            <td>{{ '%.2f' % consumo_padrao_g }}</td>
+        </tr>
+        <tr>
+            <th>Preço do produto padrão (R$/kg)</th>
+            <td>US$ {{ '%.2f' % preco_padrao }}</td>
+        </tr>
+        <tr>
+            <th>Consumo do produto c/ Inbeef (g/dia)</th>
+            <td>{{ '%.2f' % consumo_inbeef_g }}</td>
+        </tr>
+        <tr>
+            <th>Preço do produto com Inbeef (R$/kg)</th>
+            <td>US$ {{ '%.2f' % preco_inbeef }}</td>
+        </tr>
+        <tr>
+            <th>Expectativa GMD adicional (g/dia)</th>
+            <td>{{ '%.2f' % expectativa_gmd }}</td>
+        </tr>
+    </table>
+
+    <h2>Resultados del Cálculo</h2>
+    <table>
+        <tr>
+            <th>Custo diário padrão (R$)</th>
+            <td>US$ {{ '%.2f' % custo_padrao_diario }}</td>
+        </tr>
+        <tr>
+            <th>Custo diário Inbeef (R$)</th>
+            <td>US$ {{ '%.2f' % custo_inbeef_diario }}</td>
+        </tr>
+        <tr>
+            <th>Diferença de investimento (R$)</th>
+            <td>US$ {{ '%.2f' % diferenca_investimento }}</td>
+        </tr>
+        <tr>
+            <th>Ponto de equilíbrio (g/dia)</th>
+            <td>{{ '%.2f' % ponto_equilibrio }}</td>
+        </tr>
+        <tr>
+            <th>Ganho líquido por animal (R$)</th>
+            <td>US$ {{ '%.2f' % ganho_liq_por_animal }}</td>
+        </tr>
+        <tr>
+            <th>Ganho total do lote (R$)</th>
+            <td>US$ {{ '%.2f' % ganho_total_lote }}</td>
+        </tr>
+        <tr>
+            <th>Custo total da suplementação padrão (R$)</th>
+            <td>US$ {{ '%.2f' % custo_total_padrao }}</td>
+        </tr>
+        <tr>
+            <th>Retorno Inbeef (R$)</th>
+            <td>{{ '%.2f' % retorno_inbeef }}</td>
+        </tr>
+    </table>
+</body>
+</html>
